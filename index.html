@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>NG Base Frame</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="img/favicon-terminal.ico" type="image/gif" sizes="16x16">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.13.4/ui-bootstrap-tpls.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./data.js"></script>
+
+    <style>
+        body,
+        html {
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div ng-app="InsideMapsData">
+        <div ng-controller="MainCtrl">
+            <div class="container">
+                <h2>{{institutionDetail.name}}<small><sub>{{institutionDetail.tagline}}</sub></small></h2>
+                <hr>
+                <div data-ng-repeat="student in studentsGrades">
+                    <img ng-src="{{student.image}}" class="img-thumbnail" height="175" width="200"></img><br><br>
+                    <p><strong>Name: </strong>{{student.name}}</p>
+                    <p><strong>ID: </strong>{{student.id}}</p>
+                    <p><strong>Courses: </strong><span data-ng-repeat="course in student.courses">{{course}} </span></p><br><br>
+                </div>
+                <hr>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
